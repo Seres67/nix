@@ -61,10 +61,6 @@
     # Deduplicate and optimize nix store
     auto-optimise-store = true;
   };
-
-  # FIXME: Add the rest of your current configuration
-
-  # TODO: Set your hostname
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   networking.firewall.enable = false;
