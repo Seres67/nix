@@ -28,7 +28,10 @@
         ./touchpad.nix
         ./gc.nix
         ./sway.nix
+        ./waybar.nix
+        ./wofi.nix
         ./kitty.nix
+        ./steam.nix
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;

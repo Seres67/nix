@@ -57,7 +57,7 @@
   };
 
   # Configure console keymap
-  console.keyMap = "dvorak";
+  console.keyMap = "us";
 
   # Enable CUPS to print documents.
   services.printing.enable = false;
@@ -107,6 +107,8 @@
     #  wget
     git
     moonlight-qt
+    gparted
+    btrfs-progs
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
