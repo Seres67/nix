@@ -7,7 +7,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    swalock
+    swaylock
   ];
 
   environment.etc."swaylock/config".text = ''
