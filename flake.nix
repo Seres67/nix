@@ -27,6 +27,7 @@
         ./firacode-nerd.nix
         ./touchpad.nix
         ./gc.nix
+        ./sway.nix
         ./kitty.nix
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
