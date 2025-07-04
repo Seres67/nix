@@ -109,6 +109,9 @@
     moonlight-qt
     gparted
     btrfs-progs
+    orca-slicer
+    vesktop
+    xdg-user-dirs
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
