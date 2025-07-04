@@ -35,6 +35,7 @@
         system = "x86_64-linux";
         modules = [
           (import ./hardware/nessus.nix { inherit nixos-hardware; })
+          ./zram.nix
           ./configuration.nix
           ./firacode-nerd.nix
           ./touchpad.nix
