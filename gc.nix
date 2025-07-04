@@ -2,7 +2,7 @@
 
 {
   # Limit the number of generations to keep
-  boot.loader.grub.configurationLimit = 5;
+  boot.loader.systemd-boot.configurationLimit = 5;
 
   # Perform garbage collection weekly to maintain low disk usage
   nix.gc = {
