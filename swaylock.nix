@@ -11,7 +11,7 @@
   ];
 
   environment.etc."swaylock/config".text = ''
-    image=/etc/sway/wallpaper.png
+    image=/etc/nixos/wallpaper.png
     scaling=fill
   '';
 }
