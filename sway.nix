@@ -41,6 +41,8 @@
 
         set $menu wofi -s /etc/wofi/styles.css --show "drun" --terminal kitty
 
+        set $lock swaylock -f -C /etc/swaylock/config
+
         # Font
         font pango:FiraCode Nerd Font Mono Ret 13
         #font pango:MonaspiceNe Nerd Font Mono 13
@@ -64,9 +66,9 @@
         # Example configuration:
         #
         exec swayidle -w \
-                 timeout 300 'swaylock -f -c 000000' \
+                 timeout 300 '$lock' \
                  timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-                 before-sleep 'swaylock -f -c 000000'
+                 before-sleep '$lock'
         #
         # This will lock your screen after 300 seconds of inactivity, then turn off
         # your displays after another 300 seconds, and turn your screens back on when
@@ -296,13 +298,13 @@
         bindsym $mod+r mode "resize"
 
         # Lock
-        bindsym $mod+l exec swaylock
+        bindsym $mod+l exec $lock
 
         # Screenshot
         bindsym $mod+Shift+s exec slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
 
         # Lock on lid close
-        bindswitch lid:off exec swaylock
+        bindswitch lid:off exec $lock
 
         # Brightness
         bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
