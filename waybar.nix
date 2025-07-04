@@ -55,7 +55,7 @@
           "format":" {}%"
        },
        "temperature":{
-          "hwmon-path":"/sys/class/hwmon/hwmon4/temp1_input",
+          "hwmon-path":"/sys/devices/pci0000\:00/0000\:00\:18.3/hwmon/hwmon3/temp1_input",
           "critical-threshold":80,
           "format":"{icon} {temperatureC}°C",
           "format-icons":[
