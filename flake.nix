@@ -45,6 +45,7 @@
           (import ./hardware/nessus.nix { inherit nixos-hardware; })
           ./zram.nix
           ./configuration.nix
+          ./yubikey.nix
           ./firacode-nerd.nix
           ./touchpad.nix
           ./gc.nix
