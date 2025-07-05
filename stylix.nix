@@ -8,7 +8,6 @@
 {
   stylix = {
     enable = true;
-    autoEnable = false;
     base16Scheme = {
       base00 = "#242424";
       base01 = "#323232";
@@ -32,38 +31,23 @@
     fonts = {
       serif = {
         package = pkgs.nerd-fonts.fira-code;
-        name = "Fira Code Nerd";
+        name = "FiraCode Nerd Font";
       };
+
       sansSerif = {
         package = pkgs.nerd-fonts.fira-code;
-        name = "Fira Code Nerd Sans";
+        name = "FiraCode Nerd Font Sans";
       };
 
       monospace = {
         package = pkgs.nerd-fonts.fira-mono;
-        name = "Fira Code Nerd Sans Mono";
+        name = "FiraCode Nerd Font Mono";
       };
 
       emoji = {
         package = pkgs.noto-fonts-emoji;
         name = "Noto Color Emoji";
       };
-    };
-    targets = {
-      # firefox.enable = true;
-      font-packages.enable = true;
-      fontconfig.enable = true;
-      # fzf.enable = true;
-      grub.enable = true;
-      # kitty.enable = true;
-      nixvim.enable = true;
-      qt.enable = true;
-      # sway.enable = true;
-      # swaylock.enable = true;
-      # vesktop.enable = true;
-      # waybar.enable = true;
-      # wofi.enable = true;
-      # xresources.enable = true;
     };
   };
 }

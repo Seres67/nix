@@ -58,6 +58,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.seres = import ./home.nix;
+            home-manager.backupFileExtension = "hmbak";
           }
           {
             environment.systemPackages = with pkgs; [

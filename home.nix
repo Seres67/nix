@@ -35,7 +35,7 @@
     fzf # A command-line fuzzy finder
 
     # networking tools
-    dnsutils  # `dig` + `nslookup`
+    dnsutils # `dig` + `nslookup`
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
     socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
@@ -48,7 +48,7 @@
     gnupg
 
     # productivity
-    btop  # replacement of htop/nmon
+    btop # replacement of htop/nmon
 
     # system call monitoring
     strace # system call monitoring
