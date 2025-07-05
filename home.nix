@@ -1,4 +1,7 @@
-{ config, pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
   home.username = "seres";
@@ -81,15 +84,10 @@
     };
   };
 
-  stylix = {
-    enable = true;
-    targets = {
-      firefox.profileNames = [ "default" ];
-    };
-  };
+  stylix.enable = true;
 
   imports = [
-  ./home/vesktop.nix
+    ./home/vesktop.nix
   ];
 
   # This value determines the home Manager release that your

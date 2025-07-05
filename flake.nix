@@ -17,6 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     kickstart-nix.url = "github:Seres67/kickstart-nix";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
   outputs =
@@ -59,10 +60,12 @@
             home-manager.useUserPackages = true;
             home-manager.users.seres = import ./home.nix;
             home-manager.backupFileExtension = "hmbak";
+            home-manager.extraSpecialArgs = { inherit inputs; };
           }
           {
             environment.systemPackages = with pkgs; [
               nvim-pkg
+              inputs.zen-browser.packages."${system}".beta
             ];
           }
         ];

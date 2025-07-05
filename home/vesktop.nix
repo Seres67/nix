@@ -18,11 +18,9 @@
         autoUpdate = true;
         autoUpdateNotification = true;
         useQuickCss = true;
-        themeLinks = [
-          "https://raw.githubusercontent.com/xcruxiex/themes/refs/heads/master/themes-files/nocturnal.theme.css"
-        ];
+        themeLinks = [ ];
         eagerPatches = false;
-        enabledThemes = [ "Nocturnal" ];
+        enabledThemes = [ ];
         enableReactDevtools = false;
         frameless = false;
         transparent = false;
