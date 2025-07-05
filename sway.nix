@@ -322,6 +322,8 @@
         bindsym XF86AudioNext exec playerctl next
         bindsym XF86AudioPrev exec playerctl previous
 
+        # Color picker
+        bindsym $mod+Shift+p exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
         # Disable window borders
         default_border pixel 2
 
