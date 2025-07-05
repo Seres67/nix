@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
     home-manager = {
       url = "github:nix-community/home-manager/9a4a9f1";
       # The `follows` keyword in inputs is used for inheritance.
@@ -11,16 +12,20 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     kickstart-nix.url = "github:Seres67/kickstart-nix";
-    nixos-hardware.url = "github:NixOS/nixos-hardware";
   };
 
   outputs =
     {
       self,
       nixpkgs,
-      home-manager,
       nixos-hardware,
+      home-manager,
+      stylix,
       kickstart-nix,
       ...
     }@inputs:
@@ -34,6 +39,8 @@
       nixosConfigurations.nessus = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          stylix.nixosModules.stylix
+          ./stylix.nix
           (import ./hardware/nessus.nix { inherit nixos-hardware; })
           ./zram.nix
           ./configuration.nix
