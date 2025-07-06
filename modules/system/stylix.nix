@@ -27,7 +27,7 @@
       base0F = "#9b9b9b";
     };
     polarity = "dark";
-    image = ./wallpaper.png;
+    image = ../../assets/wallpaper.png;
     cursor = {
       package = pkgs.rose-pine-cursor;
       size = 36;

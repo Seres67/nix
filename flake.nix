@@ -46,27 +46,26 @@
         system = "x86_64-linux";
         modules = [
           stylix.nixosModules.stylix
-          ./stylix.nix
-          (import ./hardware/nessus.nix { inherit nixos-hardware; })
-          ./zram.nix
-          ./configuration.nix
-          (import ./yubikey.nix { inherit pkgs pkgs-yubico; })
-          ./firacode-nerd.nix
-          ./touchpad.nix
-          ./gc.nix
-          ./greetd.nix
-          ./xdg-portal.nix
-          ./hyprland.nix
-          # ./swaylock.nix
-          ./waybar.nix
-          ./wofi.nix
-          ./kitty.nix
-          ./steam.nix
+          ./modules/system/stylix.nix
+          (import ./machines/nessus/hardware.nix { inherit nixos-hardware; })
+          ./modules/system/zram.nix
+          ./machines/nessus/configuration.nix
+          (import ./modules/system/yubikey.nix { inherit pkgs pkgs-yubico; })
+          ./modules/system/firacode-nerd.nix
+          ./modules/system/touchpad.nix
+          ./modules/system/gc.nix
+          ./modules/desktop/greetd.nix
+          ./modules/system/xdg-portal.nix
+          ./modules/desktop/hyprland.nix
+          ./modules/desktop/waybar.nix
+          ./modules/desktop/wofi.nix
+          ./modules/apps/kitty.nix
+          ./modules/apps/steam.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.seres = import ./home.nix;
+            home-manager.users.seres = import ./home/seres/default.nix;
             home-manager.backupFileExtension = "hmbak";
             home-manager.extraSpecialArgs = { inherit inputs; };
           }

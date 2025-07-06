@@ -7,21 +7,6 @@
   home.username = "seres";
   home.homeDirectory = "/home/seres";
 
-  # link the configuration file in current directory to the specified location in home directory
-  # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
-
-  # link all files in `./scripts` to `~/.config/i3/scripts`
-  # home.file.".config/i3/scripts" = {
-  #   source = ./scripts;
-  #   recursive = true;   # link recursively
-  #   executable = true;  # make all files executable
-  # };
-
-  # encode the file content in nix configuration file directly
-  # home.file.".xxx".text = ''
-  #     xxx
-  # '';
-
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     neofetch
@@ -87,10 +72,10 @@
   stylix.enable = true;
 
   imports = [
-    ./home/gtk.nix
-    ./home/hyprland.nix
-    ./home/vesktop.nix
-    ./home/kde-connect.nix
+    ./gtk.nix
+    ./hyprland.nix
+    ./vesktop.nix
+    ./kde-connect.nix
   ];
 
   # This value determines the home Manager release that your

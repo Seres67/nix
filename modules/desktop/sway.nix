@@ -38,7 +38,7 @@
 
         ### Output configuration
         #
-        output * bg /etc/nixos/wallpaper.png fill
+        output * bg /etc/nixos/assets/wallpaper.png fill
 
         # You can get the names of your outputs by running: swaymsg -t get_outputs
         output eDP-1 resolution 1920x1080 position 0,0
