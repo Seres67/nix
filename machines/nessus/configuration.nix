@@ -84,6 +84,7 @@
     orca-slicer
     xdg-user-dirs
     pwvucontrol
+    brightnessctl
   ];
 
   # KDE Connect ports
