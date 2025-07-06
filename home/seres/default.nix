@@ -71,9 +71,18 @@
 
   stylix.enable = true;
 
+  services.network-manager-applet.enable = true;
+
+  programs.btop.enable = true;
+  programs.kitty.enable = true;
+  programs.hyprlock.enable = true;
+  services.mako.enable = true;
+  programs.wofi.enable = true;
+  
   imports = [
     ./gtk.nix
     ./hyprland.nix
+    ./waybar.nix
     ./vesktop.nix
     ./kde-connect.nix
   ];

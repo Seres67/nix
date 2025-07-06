@@ -72,6 +72,7 @@ in
         "${pkgs.dbus}/bin/dbus-update-activation-environment --all"
         "${pkgs.mako}/bin/mako"
         "${pkgs.waybar}/bin/waybar"
+        "${pkgs.networkmanagerapplet}/bin/nm-applet"
       ];
       bindm = [
         "$mod, mouse:272, movewindow"
@@ -85,10 +86,10 @@ in
         ", switch:on:Lid Switch, exec, hyprlock --immediate"
       ];
       bindle = [
-        ", XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle"
-        ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +${volumeStep}%"
-        ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -${volumeStep}%"
-        ", XF86AudioMicMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ +${volumeStep}%"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ -${volumeStep}%"
+        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
         ", XF86AudioPlay, exec, playerctl play-pause"
         ", XF86AudioNext, exec, playerctl next"
         ", XF86AudioPrev, exec, playerctl previous"

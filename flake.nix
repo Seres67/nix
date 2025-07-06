@@ -57,7 +57,6 @@
           ./modules/desktop/greetd.nix
           ./modules/system/xdg-portal.nix
           ./modules/desktop/hyprland.nix
-          ./modules/desktop/waybar.nix
           ./modules/desktop/wofi.nix
           ./modules/apps/kitty.nix
           ./modules/apps/steam.nix

@@ -83,6 +83,7 @@
     btrfs-progs
     orca-slicer
     xdg-user-dirs
+    pwvucontrol
   ];
 
   # KDE Connect ports
