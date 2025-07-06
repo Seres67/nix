@@ -88,6 +88,7 @@
 
   imports = [
     ./home/vesktop.nix
+    ./home/kde-connect.nix
   ];
 
   # This value determines the home Manager release that your

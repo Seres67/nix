@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-yubico, ... }:
 
 {
   services.udev.packages = [ pkgs.yubikey-personalization ];
@@ -13,6 +13,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    yubioath-flutter
+    pkgs-yubico.yubioath-flutter
+    yubikey-personalization
   ];
 }

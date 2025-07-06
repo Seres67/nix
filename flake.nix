@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-yubico.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -24,6 +25,7 @@
     {
       self,
       nixpkgs,
+      nixpkgs-yubico,
       nixos-hardware,
       home-manager,
       stylix,
@@ -35,6 +37,9 @@
         system = "x86_64-linux";
         overlays = [ kickstart-nix.overlays.default ];
       };
+      pkgs-yubico = import nixpkgs-yubico {
+        system = "x86_64-linux";
+      };
     in
     {
       nixosConfigurations.nessus = nixpkgs.lib.nixosSystem {
@@ -45,7 +50,7 @@
           (import ./hardware/nessus.nix { inherit nixos-hardware; })
           ./zram.nix
           ./configuration.nix
-          ./yubikey.nix
+          (import ./yubikey.nix { inherit pkgs pkgs-yubico; })
           ./firacode-nerd.nix
           ./touchpad.nix
           ./gc.nix

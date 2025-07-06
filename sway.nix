@@ -336,6 +336,7 @@
         for_window [app_id="^zen$" title="^Extension: "] floating enable, sticky enable
         for_window [app_id="^zen$" title="^Picture-in-Picture$"] floating enable, sticky enable
         for_window [class="^vesktop$" title="^› ça stream 𓂃⋆.˚$"] floating enable, sticky enable
+        for_window [app_id="^org.kde.kdeconnect.daemon$"] fullscreen disable, floating enable, resize set 1920 1080
 
         # Import the most important environment variables into the D-Bus and systemd
     # user environments (e.g. required for screen sharing and Pinentry prompts):

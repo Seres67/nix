@@ -15,18 +15,6 @@
     };
     vencord = {
       settings = {
-        autoUpdate = true;
-        autoUpdateNotification = true;
-        useQuickCss = true;
-        themeLinks = [ ];
-        eagerPatches = false;
-        enabledThemes = [ ];
-        enableReactDevtools = false;
-        frameless = false;
-        transparent = false;
-        winCtrlQ = false;
-        disableMinSize = false;
-        winNativeTitleBar = false;
         plugins = {
           CommandsAPI = {
             enabled = true;
@@ -49,18 +37,6 @@
           BadgeAPI = {
             enabled = true;
           };
-        };
-        notifications = {
-          timeout = 5000;
-          position = "bottom-right";
-          useNative = "not-focused";
-          logLimit = 50;
-        };
-        cloud = {
-          authenticated = false;
-          url = "https =//api.vencord.dev/";
-          settingsSync = false;
-          settingsSyncVersion = 1751589124509;
         };
       };
     };
