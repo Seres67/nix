@@ -70,7 +70,6 @@ in
       ];
       exec-once = [
         "${pkgs.dbus}/bin/dbus-update-activation-environment --all"
-        "${pkgs.dbus}/bin/dbus-update-activation-environment --all"
         "${pkgs.mako}/bin/mako"
         "${pkgs.waybar}/bin/waybar"
       ];
@@ -112,7 +111,7 @@ in
           "$mod, J, togglesplit,"
           "$mod SHIFT, Space, togglefloating,"
           "$mod, F, fullscreen"
-          "$mod SHIFT, S, exec, grim -g '$(slurp)' $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
+          "$mod SHIFT, S, exec, slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
           ", Print, exec, grim - | wl-copy -t image/png"
           "$mod SHIFT, P, exec, hyprpicker | wl-copy"
           "$mod, L, exec, hyprlock"

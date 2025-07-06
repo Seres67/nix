@@ -26,8 +26,13 @@
       base0E = "#F2AFFD";
       base0F = "#9b9b9b";
     };
-    image = ./wallpaper.png;
     polarity = "dark";
+    image = ./wallpaper.png;
+    cursor = {
+      package = pkgs.rose-pine-cursor;
+      size = 36;
+      name = "BreezeX-RosePine-Linux";
+    };
     fonts = {
       serif = {
         package = pkgs.nerd-fonts.fira-code;
