@@ -37,6 +37,9 @@
           BadgeAPI = {
             enabled = true;
           };
+          NoDevtoolsWarning = {
+            enabled = true;
+          };
         };
       };
     };

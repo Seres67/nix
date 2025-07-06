@@ -87,6 +87,7 @@
   stylix.enable = true;
 
   imports = [
+    ./home/hyprland.nix
     ./home/vesktop.nix
     ./home/kde-connect.nix
   ];

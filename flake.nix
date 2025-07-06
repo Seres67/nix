@@ -54,8 +54,10 @@
           ./firacode-nerd.nix
           ./touchpad.nix
           ./gc.nix
-          ./sway.nix
-          ./swaylock.nix
+          ./greetd.nix
+          ./xdg-portal.nix
+          ./hyprland.nix
+          # ./swaylock.nix
           ./waybar.nix
           ./wofi.nix
           ./kitty.nix

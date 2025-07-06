@@ -24,7 +24,7 @@
            "mpris",
        ],
        "modules-center":[
-          "sway/workspaces"
+          "hyprland/workspaces"
        ],
        "modules-right":[
           "cpu",
@@ -35,12 +35,12 @@
           "battery",
           "clock",
        ],
-       "sway/window":{
+       "hyprland/window":{
           "format":"{}",
           "max-length":35,
           "separate-outputs": true
        },
-       "sway/workspaces":{
+       "hyprland/workspaces":{
           "on-click":"activate",
           "sort-by-number": true
        },
