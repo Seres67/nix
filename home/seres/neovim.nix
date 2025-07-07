@@ -32,6 +32,7 @@ _: {
         telescope.enable = true;
         utility.motion.leap.enable = true;
         binds.whichKey.enable = true;
+        notes.todo-comments.enable = true;
         # notes.neorg.enable = true;
       };
     };
