@@ -39,6 +39,7 @@ in {
           size = 3;
         };
       };
+      animations.enabled = false;
       dwindle = {
         pseudotile = true;
         preserve_split = true;
@@ -62,6 +63,9 @@ in {
         "eDP-1,1920x1080@60,0x0,1"
         ", preferred, auto, 1"
       ];
+      render = {
+        direct_scanout = 1;
+      };
       exec-once = [
         "${pkgs.dbus}/bin/dbus-update-activation-environment --all"
         "${pkgs.mako}/bin/mako"
