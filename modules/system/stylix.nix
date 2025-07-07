@@ -11,8 +11,8 @@
       base06 = "#F0F0F0"; # brighter fg
       base07 = "#FFFFFF"; # lightest fg
 
-      base08 = "#F62B5A"; # red (errors)
-      base09 = "#FF6A1F"; # brred (warnings)
+      base08 = "#F62B5A"; # red (errors) <- vars
+      base09 = "#FF6A1F"; # brred (warnings) <- numbers, constants
       base0A = "#E3C401"; # yellow (identifiers)
       base0B = "#47B413"; # green (strings)
       base0C = "#13C299"; # cyan (regex/support)

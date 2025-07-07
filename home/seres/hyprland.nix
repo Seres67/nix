@@ -28,25 +28,17 @@ in {
         };
       };
       general = {
-        gaps_in = 5;
-        gaps_out = 20;
-        border_size = 2;
+        gaps_in = 1;
+        gaps_out = 1;
+        border_size = 1;
         layout = "dwindle";
       };
       decoration = {
-        rounding = 10;
         blur = {
           enabled = true;
           size = 3;
-          passes = 1;
-        };
-        shadow = {
-          enabled = true;
-          range = 4;
-          render_power = 3;
         };
       };
-      animations.enabled = false;
       dwindle = {
         pseudotile = true;
         preserve_split = true;
@@ -120,6 +112,7 @@ in {
           "$mod, L, exec, hyprlock"
           "$mod, period, exec, wofi-emoji"
           "$mod SHIFT, X, exec, hyprctl kill"
+          "$mod SHIFT, F, exec, pkill -SIGUSR1 waybar"
         ]
         ++ (
           # workspaces
