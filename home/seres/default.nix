@@ -89,6 +89,7 @@
     ./neovim.nix
     ./vesktop.nix
     ./kde-connect.nix
+    ./mime.nix
   ];
 
   # This value determines the home Manager release that your

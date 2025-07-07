@@ -51,7 +51,7 @@
         ./modules/system/firacode-nerd.nix
         ./modules/system/touchpad.nix
         ./modules/system/gc.nix
-        ./modules/services/pihole.nix
+        ./modules/services/blocky.nix
         ./modules/desktop/greetd.nix
         ./modules/system/xdg-portal.nix
         ./modules/desktop/hyprland.nix
