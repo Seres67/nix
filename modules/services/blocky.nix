@@ -22,7 +22,7 @@
           ips = ["9.9.9.9" "149.112.112.112"];
         };
         blocking = {
-          denyLists = {
+          denylists = {
             ads = [
               "https://big.oisd.nl/domainswild"
               "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro.txt"
