@@ -1,11 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     grim
     slurp
@@ -78,7 +71,7 @@
         input "1267:12608:ELAN06FA:00_04F3:3140_Touchpad" {
           dwt disabled
           tap enabled
-          middle_emulation enabled 
+          middle_emulation enabled
           natural_scroll enabled
         }
 

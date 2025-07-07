@@ -1,11 +1,12 @@
 {
   pkgs,
+  inputs,
   ...
-}:
-
-{
-  home.username = "seres";
-  home.homeDirectory = "/home/seres";
+}: {
+  home = {
+    username = "seres";
+    homeDirectory = "/home/seres";
+  };
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
@@ -52,37 +53,40 @@
   ];
 
   # basic configuration of git, please change to your own
-  programs.git = {
-    enable = true;
-    userName = "seres";
-    userEmail = "seres@seres.eu.org";
-  };
-
-  programs.bash = {
-    enable = true;
-    enableCompletion = true;
-    bashrcExtra = ''
-      export PATH="$PATH:$HOME/.local/bin:$HOME/go/bin"
-    '';
-
-    shellAliases = {
+  programs = {
+    git = {
+      enable = true;
+      userName = "seres";
+      userEmail = "seres@seres.eu.org";
     };
+
+    bash = {
+      enable = true;
+      enableCompletion = true;
+      bashrcExtra = ''
+        export PATH="$PATH:$HOME/.local/bin:$HOME/go/bin"
+      '';
+
+      shellAliases = {
+      };
+    };
+    btop.enable = true;
+    hyprlock.enable = true;
+    wofi.enable = true;
   };
 
   stylix.enable = true;
 
   services.network-manager-applet.enable = true;
-
-  programs.btop.enable = true;
-  programs.kitty.enable = true;
-  programs.hyprlock.enable = true;
   services.mako.enable = true;
-  programs.wofi.enable = true;
-  
+
   imports = [
     ./gtk.nix
     ./hyprland.nix
     ./waybar.nix
+    ./kitty.nix
+    inputs.nvf.homeManagerModules.default
+    ./neovim.nix
     ./vesktop.nix
     ./kde-connect.nix
   ];

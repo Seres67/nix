@@ -1,11 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-
-{
+_: {
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;

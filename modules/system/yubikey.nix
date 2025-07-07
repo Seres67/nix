@@ -1,7 +1,9 @@
-{ pkgs, pkgs-yubico, ... }:
-
 {
-  services.udev.packages = [ pkgs.yubikey-personalization ];
+  pkgs,
+  pkgs-yubico,
+  ...
+}: {
+  services.udev.packages = [pkgs.yubikey-personalization];
 
   # Smartcard
   services.pcscd.enable = true;

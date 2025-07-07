@@ -1,4 +1,3 @@
-{...}:
-{
+_: {
   gtk.enable = true;
 }

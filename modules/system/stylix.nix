@@ -1,52 +1,25 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-
-{
+{pkgs, ...}: {
   stylix = {
     enable = true;
     base16Scheme = {
-      base00 = "#242424";
-      base01 = "#323232";
-      base02 = "#404040";
-      base03 = "#888888";
-      base04 = "#9c9c9c";
-      base05 = "#e6e6e6";
-      base06 = "#f5f5f5";
-      base07 = "#ffffff";
-      base08 = "#f62b5a"; # red
-      base09 = "#e3c401"; # orange
-      base0A = "#e9e836"; # yellow
-      base0B = "#47b413"; # green
-      base0C = "#13c299"; # cyan
-      base0D = "#24adc4"; # blue
-      base0E = "#f2affd"; # purple
-      base0F = "#feabf2"; # magenta
+      base00 = "#242424"; # background
+      base01 = "#2f2f2f"; # cursor line
+      base02 = "#3c3c3c"; # selection
+      base03 = "#616161"; # comments
+      base04 = "#B0B0B0"; # secondary fg
+      base05 = "#E6E6E6"; # main fg
+      base06 = "#F0F0F0"; # brighter fg
+      base07 = "#FFFFFF"; # lightest fg
+
+      base08 = "#F62B5A"; # red (errors)
+      base09 = "#FF6A1F"; # brred (warnings)
+      base0A = "#E3C401"; # yellow (identifiers)
+      base0B = "#47B413"; # green (strings)
+      base0C = "#13C299"; # cyan (regex/support)
+      base0D = "#24ACD4"; # blue (keywords)
+      base0E = "#F2AFFD"; # magenta (types/special)
+      base0F = "#24DFC4"; # brcyan (deprecated/misc)
     };
-    #:root {
-#     --base00: #242424; /* Black */
-#     --base01: #323232; /* Bright Black */
-#     --base02: #404040; /* Grey */
-#     --base03: #888888; /* Brighter Grey */
-#     --base04: #9c9c9c; /* Bright Grey */
-#     --base05: #e6e6e6; /* White */
-#     --base06: #f5f5f5; /* Brighter White */
-#     --base07: #ffffff; /* Bright White */
-#     --base08: #e3c401; /* Red */
-#     --base09: #24dfc4; /* Orange */
-#     --base0A: #13c299; /* Yellow */
-#     --base0B: #47b413; /* Green */
-#     --base0C: #ff4d51; /* Cyan */
-#     --base0D: #24acd4; /* Blue */
-#     --base0E: #f2affd; /* Purple */
-#     --base0F: #9b9b9b; /* Magenta */
-#
-#     --primary-630: var(--base00); /* Autocomplete background */
-#     --primary-660: var(--base00); /* Search input background */
-# }
     polarity = "dark";
     image = ../../assets/wallpaper.png;
     cursor = {

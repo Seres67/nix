@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   programs.waybar = {
     enable = true;
     settings = {
@@ -15,7 +14,7 @@
           "tray"
           "mpris"
         ];
-        modules-center = [ "hyprland/workspaces" ];
+        modules-center = ["hyprland/workspaces"];
         modules-right = [
           "cpu"
           "memory"
