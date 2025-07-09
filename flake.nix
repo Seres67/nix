@@ -36,41 +36,54 @@
       inherit system;
     };
   in {
-    nixosConfigurations.nessus = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        stylix.nixosModules.stylix
-        ./modules/system/stylix.nix
-        (import ./machines/nessus/hardware.nix {inherit nixos-hardware;})
-        ./modules/system/zram.nix
-        ./machines/nessus/configuration.nix
-        (import ./modules/system/yubikey.nix {inherit pkgs-yubico;})
-        ./modules/system/firacode-nerd.nix
-        ./modules/system/touchpad.nix
-        ./modules/system/gc.nix
-        ./modules/services/blocky.nix
-        ./modules/desktop/greetd.nix
-        ./modules/system/xdg-portal.nix
-        ./modules/desktop/xfce.nix
-        ./modules/desktop/hyprland.nix
-        ./modules/desktop/wofi.nix
-        ./modules/apps/steam.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.seres = import ./home/seres/default.nix;
-            backupFileExtension = "hmbak2";
-            extraSpecialArgs = {inherit inputs;};
-          };
-        }
-        {
-          environment.systemPackages = with pkgs; [
-            inputs.zen-browser.packages."${system}".beta
-          ];
-        }
-      ];
+    nixosConfigurations = {
+      nessus = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          stylix.nixosModules.stylix
+          ./modules/system/stylix.nix
+          (import ./machines/nessus/hardware.nix {inherit nixos-hardware;})
+          ./modules/system/zram.nix
+          ./machines/nessus/configuration.nix
+          (import ./modules/system/yubikey.nix {inherit pkgs-yubico;})
+          ./modules/system/firacode-nerd.nix
+          ./modules/system/touchpad.nix
+          ./modules/system/gc.nix
+          ./modules/services/blocky.nix
+          ./modules/desktop/greetd.nix
+          ./modules/system/xdg-portal.nix
+          ./modules/desktop/xfce.nix
+          ./modules/desktop/hyprland.nix
+          ./modules/desktop/wofi.nix
+          ./modules/apps/steam.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.seres = import ./home/seres/default.nix;
+              backupFileExtension = "hmbak2";
+              extraSpecialArgs = {inherit inputs;};
+            };
+          }
+          {
+            environment.systemPackages = with pkgs; [
+              inputs.zen-browser.packages."${system}".beta
+            ];
+          }
+        ];
+      };
+      titan = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        modules = [
+          stylix.nixosModules.stylix
+          ./modules/system/stylix.nix
+          ./modules/system/zram.nix
+          ./machines/titan/configuration.nix
+          ./modules/system/gc.nix
+          ./modules/services/openssh.nix
+        ];
+      };
     };
   };
 }
