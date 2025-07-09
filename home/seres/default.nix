@@ -78,12 +78,13 @@
   stylix.enable = true;
 
   services.network-manager-applet.enable = true;
-  services.mako.enable = true;
+  services.blueman-applet.enable = true;
 
   imports = [
     ./gtk.nix
     ./hyprland.nix
     ./waybar.nix
+    ./mako.nix
     ./kitty.nix
     inputs.nvf.homeManagerModules.default
     ./neovim.nix

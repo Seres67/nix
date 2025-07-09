@@ -1,9 +1,5 @@
-{
-  pkgs,
-  pkgs-yubico,
-  ...
-}: {
-  services.udev.packages = [pkgs.yubikey-personalization];
+{pkgs-yubico, ...}: {
+  services.udev.packages = [pkgs-yubico.yubikey-personalization];
 
   # Smartcard
   services.pcscd.enable = true;
@@ -14,8 +10,8 @@
     enableSSHSupport = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    pkgs-yubico.yubioath-flutter
+  environment.systemPackages = with pkgs-yubico; [
+    yubioath-flutter
     yubikey-personalization
   ];
 }

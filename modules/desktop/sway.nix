@@ -29,10 +29,6 @@
         # Font
         font pango:FiraCode Nerd Font Mono Ret 13
 
-        ### Output configuration
-        #
-        output * bg /etc/nixos/assets/wallpaper.png fill
-
         # You can get the names of your outputs by running: swaymsg -t get_outputs
         output eDP-1 resolution 1920x1080 position 0,0
         output HDMI-A-1 resolution 2560x1440 position 1920,0

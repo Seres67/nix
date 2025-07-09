@@ -21,7 +21,7 @@
       base0F = "#24DFC4"; # brcyan (deprecated/misc)
     };
     polarity = "dark";
-    image = ../../assets/wallpaper.png;
+    image = ../../assets/wallpaper6.jpg;
     cursor = {
       package = pkgs.rose-pine-cursor;
       size = 36;

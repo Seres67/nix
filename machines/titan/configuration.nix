@@ -8,14 +8,14 @@
     "flakes"
   ];
 
-  boot = {
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
-    kernelPackages = pkgs.linuxPackages_latest;
-  };
+  # boot = {
+  #   loader.systemd-boot.enable = true;
+  #   loader.efi.canTouchEfiVariables = true;
+  #   kernelPackages = pkgs.linuxPackages_latest;
+  # };
 
   networking = {
-    hostName = "nessus";
+    hostName = "titan";
     networkmanager.enable = true;
   };
 
@@ -23,35 +23,14 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "fr_FR.UTF-8";
-    LC_IDENTIFICATION = "fr_FR.UTF-8";
-    LC_MEASUREMENT = "fr_FR.UTF-8";
-    LC_MONETARY = "fr_FR.UTF-8";
-    LC_NAME = "fr_FR.UTF-8";
-    LC_NUMERIC = "fr_FR.UTF-8";
-    LC_PAPER = "fr_FR.UTF-8";
-    LC_TELEPHONE = "fr_FR.UTF-8";
-    LC_TIME = "fr_FR.UTF-8";
-  };
-
   services = {
     xserver.xkb = {
       layout = "us";
       variant = "alt-intl";
     };
-    pulseaudio.enable = false;
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
   };
 
   console.keyMap = "us";
-
-  security.rtkit.enable = true;
 
   users.users.seres = {
     isNormalUser = true;
@@ -63,35 +42,13 @@
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDFomO3vJYFu3cQjt/7Q6PZ4jTcDBMi2Gsle4yxNUjOY seres@europa"
     ];
-    packages = with pkgs; [
-      moonlight-qt
-      orca-slicer
-    ];
   };
 
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     git
-    gparted
-    btrfs-progs
     xdg-user-dirs
-    pwvucontrol
-    brightnessctl
-  ];
-
-  # KDE Connect ports
-  networking.firewall.allowedTCPPortRanges = [
-    {
-      from = 1714;
-      to = 1764;
-    }
-  ];
-  networking.firewall.allowedUDPPortRanges = [
-    {
-      from = 1714;
-      to = 1764;
-    }
   ];
 
   # This value determines the NixOS release from which the default
