@@ -9,4 +9,9 @@ _: {
     enable = true;
     enableRenice = true;
   };
+
+  programs.gamescope = {
+    enable = true;
+    capSysNice = true;
+  };
 }
