@@ -62,6 +62,7 @@
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDFomO3vJYFu3cQjt/7Q6PZ4jTcDBMi2Gsle4yxNUjOY seres@europa"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ8l1rRqWELZXGI4cwWzUIju6b53krmf8l4gA/l08GsU seres@titan"
     ];
     packages = with pkgs; [
       moonlight-qt
@@ -96,6 +97,14 @@
 
   # Enable cross comp on nessus to aarch64
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
+  services.openssh = {
+    enable = true;
+    openFirewall = true;
+    settings = {
+      PermitRootLogin = "no";
+      PasswordAuthentication = false;
+    };
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

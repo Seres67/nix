@@ -8,11 +8,10 @@
     "flakes"
   ];
 
-  # boot = {
-  #   loader.systemd-boot.enable = true;
-  #   loader.efi.canTouchEfiVariables = true;
-  #   kernelPackages = pkgs.linuxPackages_latest;
-  # };
+  boot = {
+    loader.grub.enable = false;
+    loader.generic-extlinux-compatible.enable = true;
+  };
 
   networking = {
     hostName = "titan";
@@ -44,6 +43,24 @@
     ];
   };
 
+  nix.distributedBuilds = true;
+  nix.buildMachines = [
+    {
+      hostName = "builder";
+      systems = ["x86_64-linux" "aarch64-linux"];
+      maxJobs = 4;
+      speedFactor = 2;
+      supportedFeatures = ["nixos-test" "benchmark" "big-parallel" "kvm"];
+    }
+  ];
+  programs.ssh.extraConfig = ''
+    Host builder
+      HostName 192.168.1.25
+      Port 22
+      User seres
+      IdentitiesOnly yes
+      IdentityFile /root/.ssh/id_ed25519
+  '';
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
@@ -57,5 +74,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.11"; # Did you read the comment?
 }
