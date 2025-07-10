@@ -59,7 +59,7 @@
       Port 22
       User seres
       IdentitiesOnly yes
-      IdentityFile /root/.ssh/id_ed25519
+      IdentityFile /home/seres/.ssh/id_ed25519
   '';
   nixpkgs.config.allowUnfree = true;
 
