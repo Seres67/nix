@@ -49,9 +49,9 @@
           ./modules/system/firacode-nerd.nix
           ./modules/system/touchpad.nix
           ./modules/system/gc.nix
-          ./modules/services/blocky.nix
           ./modules/desktop/greetd.nix
           ./modules/system/xdg-portal.nix
+          ./modules/services/waydroid.nix
           ./modules/desktop/xfce.nix
           ./modules/desktop/hyprland.nix
           ./modules/desktop/wofi.nix
@@ -76,8 +76,6 @@
       titan = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         modules = [
-          stylix.nixosModules.stylix
-          ./modules/system/stylix.nix
           ./modules/system/zram.nix
           ./machines/titan/configuration.nix
           ./modules/system/gc.nix

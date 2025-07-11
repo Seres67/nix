@@ -36,9 +36,13 @@ _: {
           enableFormat = true;
           enableTreesitter = true;
           enableExtraDiagnostics = true;
+          enableDAP = true;
           rust.enable = true;
           nix.enable = true;
-          clang.enable = true;
+          clang = {
+            enable = true;
+            lsp.package = ["clangd"];
+          };
           ts.enable = true;
           sql.enable = true;
           zig.enable = true;
