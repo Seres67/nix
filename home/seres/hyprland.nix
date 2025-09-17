@@ -47,9 +47,9 @@ in {
       master = {
         new_status = true;
       };
-      gestures = {
-        workspace_swipe = true;
-      };
+      gesture = [
+        "3, horizontal, workspace"
+      ];
       misc = {
         font_family = "FiraCode Nerd Font";
         focus_on_activate = true;

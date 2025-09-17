@@ -39,10 +39,7 @@ _: {
           enableDAP = true;
           rust.enable = true;
           nix.enable = true;
-          clang = {
-            enable = true;
-            lsp.package = ["clangd"];
-          };
+          clang.enable = true;
           ts.enable = true;
           sql.enable = true;
           zig.enable = true;
