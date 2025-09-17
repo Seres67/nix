@@ -36,10 +36,10 @@
   };
 
   services = {
-    xserver.xkb = {
-      layout = "us";
-      variant = "alt-intl";
-    };
+    # xserver.xkb = {
+    #   layout = "us";
+    #   variant = "alt-intl";
+    # };
     pulseaudio.enable = false;
     pipewire = {
       enable = true;
@@ -97,9 +97,9 @@
 
   # Enable cross comp on nessus to aarch64
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
+
   services.openssh = {
     enable = true;
-    openFirewall = true;
     settings = {
       PermitRootLogin = "no";
       PasswordAuthentication = false;
