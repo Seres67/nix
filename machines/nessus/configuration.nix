@@ -79,6 +79,8 @@
     xdg-user-dirs
     pwvucontrol
     brightnessctl
+    anytype
+    beeper
   ];
 
   # KDE Connect ports
