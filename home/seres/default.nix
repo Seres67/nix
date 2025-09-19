@@ -92,6 +92,7 @@
     ./kde-connect.nix
     ./mime.nix
     ./easyeffects.nix
+    ./obsidian.nix
   ];
 
   # This value determines the home Manager release that your

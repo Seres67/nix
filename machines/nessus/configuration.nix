@@ -80,7 +80,6 @@
     xdg-user-dirs
     pwvucontrol
     brightnessctl
-    anytype
     beeper
   ];
 

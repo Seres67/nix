@@ -114,7 +114,7 @@
       orca-slicer
       kdePackages.kate
       android-studio
-      anytype
+      beeper
     ];
   };
 
