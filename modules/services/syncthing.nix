@@ -3,6 +3,7 @@ _: {
     enable = true;
     openDefaultPorts = true;
     user = "seres";
+    dataDir = "/home/seres";
     settings = {
       devices = {
         "rpi" = {id = "TON2NU7-TBSTUMF-5FPHZGC-SLGA2LZ-VNEMCB6-IQGN56B-KYESWLQ-I5HZTQV";};
