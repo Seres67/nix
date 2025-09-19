@@ -2,4 +2,4 @@
 
 ## TODO
 
-- Override colors for neovim
+reorganize machine configurations

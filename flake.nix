@@ -55,6 +55,7 @@
           ./modules/desktop/xfce.nix
           ./modules/desktop/hyprland.nix
           ./modules/desktop/wofi.nix
+          ./modules/services/syncthing.nix
           ./modules/apps/steam.nix
           home-manager.nixosModules.home-manager
           {
@@ -84,12 +85,8 @@
           (import ./modules/system/yubikey.nix {inherit pkgs-yubico;})
           ./modules/system/firacode-nerd.nix
           ./modules/system/gc.nix
-          ./modules/desktop/greetd.nix
-          ./modules/system/xdg-portal.nix
           ./modules/services/waydroid.nix
-          ./modules/desktop/xfce.nix
-          ./modules/desktop/hyprland.nix
-          ./modules/desktop/wofi.nix
+          ./modules/services/syncthing.nix
           ./modules/apps/steam.nix
           home-manager.nixosModules.home-manager
           {
@@ -104,6 +101,7 @@
           {
             environment.systemPackages = with pkgs; [
               inputs.zen-browser.packages."${system}".beta
+              feishin
             ];
           }
         ];

@@ -91,6 +91,7 @@
     ./vesktop.nix
     ./kde-connect.nix
     ./mime.nix
+    ./easyeffects.nix
   ];
 
   # This value determines the home Manager release that your

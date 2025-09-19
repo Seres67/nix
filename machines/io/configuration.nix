@@ -46,6 +46,49 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+      extraConfig = {
+        pipewire."92-low-latency" = {
+          "context.properties" = {
+            "default.clock.rate" = 48000;
+            "default.clock.quantum" = 512;
+            "default.clock.min-quantum" = 512;
+            "default.clock.max-quantum" = 512;
+          };
+        };
+        pipewire-pulse = {
+          "91-discord-latency" = {
+            pulse.rules = [
+              {
+                matches = [{"application.process.binary" = "Discord";}];
+                actions = {
+                  update-props = {
+                    "pulse.min.quantum" = "1024/48000";
+                  };
+                };
+              }
+            ];
+          };
+          "92-low-latency" = {
+            "context.properties" = [
+              {
+                name = "libpipewire-module-protocol-pulse";
+                args = {};
+              }
+            ];
+            "pulse.properties" = {
+              "pulse.min.req" = "512/48000";
+              "pulse.default.req" = "512/48000";
+              "pulse.max.req" = "512/48000";
+              "pulse.min.quantum" = "512/48000";
+              "pulse.max.quantum" = "512/48000";
+            };
+            "stream.properties" = {
+              "node.latency" = "256/48000";
+              "resample.quality" = 1;
+            };
+          };
+        };
+      };
     };
   };
 
@@ -59,6 +102,8 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "kvm"
+      "gamemode"
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDFomO3vJYFu3cQjt/7Q6PZ4jTcDBMi2Gsle4yxNUjOY seres@europa"
@@ -68,8 +113,14 @@
       moonlight-qt
       orca-slicer
       kdePackages.kate
+      android-studio
+      anytype
     ];
   };
+
+  #TODO: get this out of here
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
