@@ -8,9 +8,9 @@ _: {
         "Pixel 8a" = {id = "A5VDEUP-J23UWM6-OP4PHUL-FLFEXKD-KFNVUVV-A5U6U5W-PPS2MR6-NCYNMQ5";};
       };
       folders = {
-        "sync" = {
+        "s9cb7-umi75" = {
           path = "/home/seres/sync";
-          devices = ["rpi" "Pixel 8a"];
+          devices = ["rpi" "Pixel 8a" "io" "nessus"];
         };
       };
     };
