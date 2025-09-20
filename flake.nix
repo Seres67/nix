@@ -64,7 +64,6 @@
           ./modules/desktop/hyprland.nix
           ./modules/desktop/wofi.nix
           ./modules/services/syncthing.nix
-          ./modules/apps/steam.nix
           home-manager.nixosModules.home-manager
           {
             home-manager = {

@@ -74,7 +74,6 @@
 
   #NOTE: maybe don't have that here
   services.network-manager-applet.enable = true;
-  services.blueman-applet.enable = true;
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
