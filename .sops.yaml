@@ -1,0 +1,10 @@
+keys:
+  - &seres 273DC1D7A77A9FB81D46DC6136C47FB683B4E18A 
+  - &seres_age age1xdvu8693ck9myt82f07jz5crc4caucpyhy8lquhwasyxpyyjce6sxsvqte
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|yml)$
+    key_groups:
+      - pgp:
+        - *seres
+      - age:
+        - *seres_age

@@ -10,12 +10,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
-      url = "github:danth/stylix";
+      url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     nvf = {
       url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -26,6 +30,8 @@
     nixos-hardware,
     home-manager,
     stylix,
+    zen-browser,
+    sops-nix,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -37,9 +43,11 @@
     };
   in {
     nixosConfigurations = {
+      #TODO: these should probably go into seperate files
       nessus = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          sops-nix.nixosModules.sops
           stylix.nixosModules.stylix
           ./modules/system/stylix.nix
           (import ./machines/nessus/hardware.nix {inherit nixos-hardware;})
@@ -62,14 +70,14 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.seres = import ./home/seres/default.nix;
+              users.seres = import ./machines/nessus/home.nix;
               backupFileExtension = "hmbak2";
               extraSpecialArgs = {inherit inputs;};
             };
           }
           {
             environment.systemPackages = with pkgs; [
-              inputs.zen-browser.packages."${system}".beta
+              zen-browser.packages."${system}".beta
             ];
           }
         ];
@@ -77,6 +85,7 @@
       io = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          sops-nix.nixosModules.sops
           stylix.nixosModules.stylix
           ./modules/system/stylix.nix
           (import ./machines/io/hardware.nix {inherit nixos-hardware;})
@@ -93,14 +102,14 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.seres = import ./home/seres/default.nix;
+              users.seres = import ./machines/io/home.nix;
               backupFileExtension = "hmbak2";
               extraSpecialArgs = {inherit inputs;};
             };
           }
           {
             environment.systemPackages = with pkgs; [
-              inputs.zen-browser.packages."${system}".beta
+              zen-browser.packages."${system}".beta
               feishin
             ];
           }

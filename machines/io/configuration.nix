@@ -115,6 +115,7 @@
       kdePackages.kate
       android-studio
       beeper
+      ghidra-bin
     ];
   };
 

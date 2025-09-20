@@ -1,4 +1,4 @@
-_: {
+{pkgs}: {
   stylix.targets.nvf.enable = false;
 
   programs.nvf = {
@@ -33,13 +33,19 @@ _: {
           };
         };
         languages = {
+          clang = {
+            enable = true;
+            lsp = {
+              enable = true;
+              package = pkgs.writeShellScriptBin "clangd" ''exec clangd "$@"'';
+            };
+          };
           enableFormat = true;
           enableTreesitter = true;
           enableExtraDiagnostics = true;
           enableDAP = true;
           rust.enable = true;
           nix.enable = true;
-          clang.enable = true;
           ts.enable = true;
           sql.enable = true;
           zig.enable = true;
@@ -63,4 +69,6 @@ _: {
       };
     };
   };
+
+  home.sessionVariables = {EDITOR = "nvim";};
 }

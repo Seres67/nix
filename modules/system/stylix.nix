@@ -5,7 +5,7 @@
       base00 = "#242424"; # background
       base01 = "#2f2f2f"; # cursor line
       base02 = "#3c3c3c"; # selection
-      base03 = "#616161"; # comments
+      base03 = "#808080"; # comments
       base04 = "#B0B0B0"; # secondary fg
       base05 = "#E6E6E6"; # main fg
       base06 = "#F0F0F0"; # brighter fg

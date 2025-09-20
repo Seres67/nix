@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   home = {
     username = "seres";
     homeDirectory = "/home/seres";
@@ -35,6 +31,8 @@
     gnutar
     zstd
     gnupg
+    age
+    sops
 
     # productivity
     btop # replacement of htop/nmon
@@ -59,7 +57,6 @@
       userName = "seres";
       userEmail = "seres@seres.eu.org";
     };
-
     bash = {
       enable = true;
       enableCompletion = true;
@@ -71,29 +68,13 @@
       };
     };
     btop.enable = true;
-    hyprlock.enable = true;
-    wofi.enable = true;
   };
 
   stylix.enable = true;
 
+  #NOTE: maybe don't have that here
   services.network-manager-applet.enable = true;
   services.blueman-applet.enable = true;
-
-  imports = [
-    ./gtk.nix
-    ./hyprland.nix
-    ./waybar.nix
-    ./mako.nix
-    ./kitty.nix
-    inputs.nvf.homeManagerModules.default
-    ./neovim.nix
-    ./vesktop.nix
-    ./kde-connect.nix
-    ./mime.nix
-    ./easyeffects.nix
-    ./obsidian.nix
-  ];
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
